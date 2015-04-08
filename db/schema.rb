@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20150408140013) do
 
   create_table "currencies", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.json     "rates"
-    t.boolean  "consumer1_ack", default: false
-    t.boolean  "consumer2_ack", default: false
-    t.boolean  "consumer3_ack", default: false
+    t.boolean  "consumer1_ack", default: false, null: false
+    t.boolean  "consumer2_ack", default: false, null: false
+    t.boolean  "consumer3_ack", default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
