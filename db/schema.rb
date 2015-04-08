@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150408140013) do
   enable_extension "uuid-ossp"
 
   create_table "currencies", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.text     "rates"
+    t.json     "rates"
     t.boolean  "consumer1_ack", default: false
     t.boolean  "consumer2_ack", default: false
     t.boolean  "consumer3_ack", default: false
