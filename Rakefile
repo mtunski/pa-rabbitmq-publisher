@@ -5,8 +5,6 @@ Rails.application.load_tasks
 namespace :rabbit do
   desc "Prepares RabbitMQ queues and exchanges for the system."
   task :setup => :environment do
-    require "bunny"
-
     connection = Bunny.new
     connection.start
 
