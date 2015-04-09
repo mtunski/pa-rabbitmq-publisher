@@ -12,7 +12,7 @@ gem 'jbuilder',     '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :test do
-  gem 'mocha'
+  gem 'webmock'
 end
 
 group :development, :test do
