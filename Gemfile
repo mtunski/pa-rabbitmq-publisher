@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :test do
   gem 'webmock'
+  gem 'mocha'
+  gem 'bunny_mock', git: 'https://github.com/rentpath/bunny_mock', ref: 'dea289c'
 end
 
 group :development, :test do
