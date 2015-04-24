@@ -5,9 +5,9 @@ namespace :rabbit do
       channel = connection.start.create_channel
 
       currencies_fanout = channel.fanout('currencies.fanout')
-      1.upto(3) { |i| channel.queue("currencies.queue_#{i}").bind(currencies_fanout) }
+      1.upto(3) { |i| channel.queue("currencies.queue_#{i}", durable: true).bind(currencies_fanout) }
 
-      channel.queue('currencies.acknowledgements').bind(
+      channel.queue('currencies.acknowledgements', durable: true).bind(
         channel.direct('currencies.direct'),
         routing_key: 'acknowledgements'
       )
