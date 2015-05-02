@@ -4,6 +4,7 @@ class AcknowledgementsWorker
 
   def initialize
     @retries = 0
+    super
   end
 
   def work(msg)
