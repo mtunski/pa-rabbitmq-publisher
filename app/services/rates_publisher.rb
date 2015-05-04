@@ -17,7 +17,7 @@ class RatesPublisher
   attr_reader :rates_fetcher, :connection
 
   def publish_rates
-    fanout   = connection.create_channel.fanout('currencies.fanout')
+    fanout   = connection.create_channel.fanout('currencies.fanout', durable: true)
     currency = rates_fetcher.call
 
     fanout.publish({
