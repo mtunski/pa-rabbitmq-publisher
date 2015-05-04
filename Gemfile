@@ -12,8 +12,13 @@ gem 'bunny'
 gem 'sneakers'
 gem 'haml-rails',   '~> 0.9'
 
+group :doc do
+  gem 'sdoc', '~> 0.4.0'
+end
 
-gem 'sdoc', '~> 0.4.0', group: :doc
+group :development do
+  gem 'foreman'
+end
 
 group :test do
   gem 'webmock'
