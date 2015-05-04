@@ -1,0 +1,32 @@
+:sass
+  input[type='submit']
+    border-radius: 0
+    border: 1px solid #000
+    background: #fff
+
+  table
+    margin-top: 20px
+
+    *, &
+      border: 1px solid #000
+
+=button_to 'Publish', action: 'publish', method: :post
+
+%table
+  %thead
+    %tr
+      %th UUID
+      %th Created
+      %th Updated
+      %th Consumer1 Ack
+      %th Consumer2 Ack
+      %th Consumer3 Ack
+  %tbody
+    %tr
+      %td= @currency.id
+      %td= @currency.created_at
+      %td= @currency.updated_at
+      %td= @currency.consumer1_ack
+      %td= @currency.consumer2_ack
+      %td= @currency.consumer3_ack
+
