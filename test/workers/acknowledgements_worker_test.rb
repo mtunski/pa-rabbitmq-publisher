@@ -20,7 +20,7 @@ class AcknowledgementsWorkerTest < ActiveSupport::TestCase
     assert @currency.consumer3_ack
   end
 
-  def test_acks_when_successfull
+  def test_acks_when_successful
     @acknowledgements_worker.expects(:ack!).once
 
     @acknowledgements_worker.work({id: 3, uuid: @currency.id}.to_json)
